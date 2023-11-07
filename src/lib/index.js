@@ -1,8 +1,19 @@
-// aqui exportaras las funciones que necesites
 
-import { createPost, deletePost, editPost, getPosts, init, login, register } from "./services";
+// Configuración de la autenticación con Google
+import { auth, googleProvider, signInWithPopup } from "./firebase";
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
+
+document.getElementById("google-auth-btn").addEventListener("click", () => {
+  signInWithPopup(auth, googleProvider)
+    .then((result) => {
+      // El usuario ha iniciado sesión correctamente
+      const user = result.user;
+      console.log("Usuario autenticado con Google:", user);
+    })
+    .catch((error) => {
+      // Manejar errores aquí
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error("Error al autenticar con Google:", errorCode, errorMessage);
+    });
+});
