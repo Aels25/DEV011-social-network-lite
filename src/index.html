@@ -9,48 +9,7 @@
 </head>
 
 <body>
-  <header>WANDERWEB</header>
-  <button id="logout-btn">Cerrar Sesión</button>
-
-
-  <!-- Formulario de Registro -->
-  <form id="register-form">
-    <label for="username">Nombre de Usuario:</label>
-    <input type="text" id="username" autocomplete="username" required>
-
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" autocomplete="email" required>
-
-    <label for="password">Contraseña:</label>
-    <input type="password" id="password" autocomplete="new-password" required>
-
-    <button type="submit">Registrarse</button>
-  </form>
-
-  <!-- Formulario de Inicio de Sesión -->
-  <form id="login-form">
-    <label for="login-email">Correo Electrónico:</label>
-    <input type="email" id="login-email" autocomplete="email" required>
-
-    <label for="login-password">Contraseña:</label>
-    <input type="password" id="login-password" autocomplete="current-password" required>
-
-    <button type="submit">Iniciar Sesión</button>
-  </form>
-
-  <!-- Botón de Autenticación con Google -->
-  <button id="google-auth-btn">Iniciar Sesión con Google</button>
-
-   <!-- Formulario de Publicación de Posts -->
-    <form id="post-form">
-      <label for="post-content">Nuevo Post:</label>
-      <input type="text" id="post-content" required>
-      <button type="submit">Publicar</button>
-    </form>
-  
-    <!-- Lista de Posts -->
-    <ul id="post-list"></ul>
-
+  <div id="root"></div>
   <!-- Scripts -->
   <script type="module" src="main.js"></script>
 </body>
