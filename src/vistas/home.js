@@ -1,17 +1,31 @@
-// file home.js
+// home.js
+
 function home(navigateTo) {
   const section = document.createElement('section');
   const title = document.createElement('h2');
-  const button = document.createElement('button');
+  const buttonLogin = document.createElement('button');
+  const buttonSignUp = document.createElement('button');
+  const buttonGoogleLogin = document.createElement('button');
 
-  title.textContent = 'Welcome to my project';
+  title.textContent = 'BIENVENIDO A LA WENDERWEB';
 
-  button.textContent = 'Ir a login';
-  button.addEventListener('click', () => {
+  buttonLogin.textContent = 'Iniciar sesión';
+  buttonLogin.addEventListener('click', () => {
     navigateTo('/login');
   });
 
-  section.append(title, button);
+  buttonSignUp.textContent = 'Crear cuenta nueva';
+  buttonSignUp.addEventListener('click', () => {
+    navigateTo('/signup');
+  });
+
+  buttonGoogleLogin.textContent = 'Iniciar sesión con Google';
+  // Agrega un manejador de eventos al nuevo botón de Google
+  buttonGoogleLogin.addEventListener('click', () => {
+    navigateTo('/googlelogin'); // Redirige a la nueva vista de Google Login
+  });
+
+  section.append(title, buttonLogin, buttonSignUp, buttonGoogleLogin);
   return section;
 }
 

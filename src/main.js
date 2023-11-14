@@ -1,13 +1,20 @@
-// file main.js
+// main.js
 import home from './vistas/home.js';
 import login from './vistas/login.js';
+import signup from './vistas/signup.js';
+import googlelogin from './vistas/googlelogin.js';
 import error from './vistas/error.js';
 
 const routes = [
   { path: '/', component: home },
   { path: '/login', component: login },
+  { path: '/signup', component: signup },
+  { path: '/googlelogin', component: googlelogin }, // Agrega la nueva ruta de Google Login
   { path: '/error', component: error },
 ];
+
+// Resto del código sigue igual
+
 
 const defaultRoute = '/';
 const root = document.getElementById('root');
