@@ -1,5 +1,5 @@
 
-// Configuración de la autenticación con Google
+/*Configuración de la autenticación con Google
 import { auth, googleProvider, signInWithPopup } from "./firebase";
 
 
@@ -16,4 +16,4 @@ document.getElementById("google-auth-btn").addEventListener("click", () => {
       const errorMessage = error.message;
       console.error("Error al autenticar con Google:", errorCode, errorMessage);
     });
-});
+});*/

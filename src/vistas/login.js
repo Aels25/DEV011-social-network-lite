@@ -1,3 +1,4 @@
+
 // file login.js
 function login(navigateTo) {
     console.log('hohoho: ', navigateTo);
@@ -9,13 +10,13 @@ function login(navigateTo) {
   const inputPass = document.createElement('input');
   const buttonLogin = document.createElement('button');
 
-  inputEmail.placeholder = 'Write email';
-  inputPass.placeholder = 'pass';
+  inputEmail.placeholder = 'Escribe tu email';
+  inputPass.placeholder = 'Contraseña';
 
   title.textContent = 'Login';
   buttonLogin.textContent = 'go';
 
-  buttonReturn.textContent = 'Return to home';
+  buttonReturn.textContent = 'Volver a la página de inicio';
   buttonReturn.addEventListener('click', () => {
     navigateTo('/');
   });

@@ -13,9 +13,6 @@ const routes = [
   { path: '/error', component: error },
 ];
 
-// Resto del código sigue igual
-
-
 const defaultRoute = '/';
 const root = document.getElementById('root');
 
