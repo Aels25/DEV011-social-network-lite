@@ -1,10 +1,13 @@
-// Esta función debería borrar todos los datos del almacenamiento local
+/* eslint-disable no-useless-escape */
+/* eslint-disable consistent-return */
+/* eslint-disable no-shadow */
+/*
+  This function should clear all data from local storage
+*/
 export const init = () => {
   localStorage.clear();
 };
 
-// Esta función debería devolver true si el usuario existe
-// Debería devolver false si el usuario no existe
 export const login = (email, password) => {
   const usersStr = localStorage.getItem('users');
   if (usersStr) {
@@ -14,38 +17,46 @@ export const login = (email, password) => {
       localStorage.setItem('user', JSON.stringify(user));
       return true;
     }
+  } else {
+    return false;
   }
-  return false;
 };
 
-// Esta función debería devolver al usuario que ha iniciado sesión
-// Debería devolver null si no hay usuario iniciado sesión
+/*
+  This function should return the logged in user
+  It should return null if there is no logged in user
+*/
 export const getLoggedInUser = () => {
   const userStr = localStorage.getItem('user');
-  return userStr ? JSON.parse(userStr) : null;
+  if (userStr) {
+    return JSON.parse(userStr);
+  }
+
+  return null;
 };
 
-// Esta función debería cerrar la sesión del usuario
+/*
+  This function should log out the user
+*/
 export const logout = () => {
   localStorage.removeItem('user');
 };
 
-// Esta función debería registrar a un nuevo usuario
-// Debería devolver true si el usuario se registró con éxito
-// Debería lanzar un error si el usuario ya existe
+/*
+  This function should register a new user
+  It should return true if the user was registered successfully
+  It should throw an error if the user already exists
+*/
 export const register = (email, password) => {
-  // Verificar la expresión regular del correo electrónico
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!emailRegex.test(email)) {
-    throw new Error('Correo electrónico no válido');
+    throw new Error('Invalid email');
   }
-
-  // Verificar la longitud de la contraseña
+  // check password length
   if (password.length < 6) {
-    throw new Error('La contraseña debe tener al menos 6 caracteres');
+    throw new Error('Password must be at least 6 characters long');
   }
-
-  // Verificar si el usuario ya existe
+  // check if user already exists
   let users = [];
   const usersStr = localStorage.getItem('users');
   if (usersStr) {
@@ -53,7 +64,7 @@ export const register = (email, password) => {
   }
   const user = users.find((user) => user.email === email);
   if (user) {
-    throw new Error('El usuario ya existe');
+    throw new Error('User already exists');
   } else {
     users.push({ email, password });
     localStorage.setItem('users', JSON.stringify(users));
@@ -61,37 +72,43 @@ export const register = (email, password) => {
   }
 };
 
-// Esta función debería devolver un array de posts
-// Cada post debería tener la siguiente estructura:
-// {
-//   id: string,
-//   content: string,
-//   email: string
-// }
+/*
+  This function should return an array of posts
+  Each post should have the following structure:
+  {
+    id: string,
+    content: string,
+    email: string
+  }
+*/
 export const getPosts = () => {
   const postsStr = localStorage.getItem('posts');
-  return postsStr ? JSON.parse(postsStr) : [];
+  if (postsStr) {
+    return JSON.parse(postsStr);
+  }
+
+  return [];
 };
 
-// Esta función debería crear un nuevo post y devolver su id
-// El post debería tener la siguiente estructura:
-// {
-//   id: string,
-//   content: string,
-//   email: string
-// }
-export const createPost = (content, email) => {
-  // Verificar la longitud del contenido
-  if (content.length < 1) {
-    throw new Error('El contenido debe tener al menos 1 carácter');
+/*
+  This function should create a new post and return its id
+  The post should have the following structure:
+  {
+    id: string,
+    content: string,
+    email: string
   }
-
-  // Verificar la expresión regular del correo electrónico
+*/
+export const createPost = (content, email) => {
+  // check content length
+  if (content.length < 1) {
+    throw new Error('Content must be at least 1 character long');
+  }
+  // check email regex
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!emailRegex.test(email)) {
-    throw new Error('Correo electrónico no válido');
+    throw new Error('Invalid email');
   }
-
   const id = Math.random().toString(36).substr(2, 9);
   let posts = [];
   const postsStr = localStorage.getItem('posts');
@@ -103,14 +120,15 @@ export const createPost = (content, email) => {
   return id;
 };
 
-// Esta función debería editar el contenido de un post
-// Debería lanzar un error si el post no existe
+/*
+  This function should edit the content of a post
+  It should throw an error if the post does not exist
+*/
 export const editPost = (idPost, content) => {
-  // Verificar la longitud del contenido
+  // check content length
   if (content.length < 1) {
-    throw new Error('El contenido debe tener al menos 1 carácter');
+    throw new Error('Content must be at least 1 character long');
   }
-
   const postsStr = localStorage.getItem('posts');
   if (postsStr) {
     const posts = JSON.parse(postsStr);
@@ -119,15 +137,17 @@ export const editPost = (idPost, content) => {
       post.content = content;
       localStorage.setItem('posts', JSON.stringify(posts));
     } else {
-      throw new Error('El post no existe');
+      throw new Error('Post does not exist');
     }
   } else {
-    throw new Error('El post no existe');
+    throw new Error('Post does not exist');
   }
 };
 
-// Esta función debería eliminar un post
-// Debería lanzar un error si el post no existe
+/*
+  This function should delete a post
+  It should throw an error if the post does not exist
+*/
 export const deletePost = (idPost) => {
   const postsStr = localStorage.getItem('posts');
   if (postsStr) {
@@ -138,12 +158,9 @@ export const deletePost = (idPost) => {
       posts.splice(index, 1);
       localStorage.setItem('posts', JSON.stringify(posts));
     } else {
-      throw new Error('El post no existe');
+      throw new Error('Post does not exist');
     }
   } else {
-    throw new Error('El post no existe');
+    throw new Error('Post does not exist');
   }
-};
-export const myFunction = () => {
-  // lógica de myFunction
 };

@@ -7,7 +7,7 @@ function home(navigateTo) {
   const buttonSignUp = document.createElement('button');
   const buttonGoogleLogin = document.createElement('button');
 
-  title.textContent = 'BIENVENIDO A LA WENDERWEB';
+  title.textContent = 'BIENVENIDO A LA WANDERWEB';
 
   buttonLogin.textContent = 'Iniciar sesión';
   buttonLogin.addEventListener('click', () => {
