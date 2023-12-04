@@ -11,6 +11,12 @@ function login(navigateTo) {
   const buttonLogin = document.createElement('button');
   const errorContainer = document.createElement('div'); // Nuevo elemento para mostrar errores
 
+  form.id = 'login-form';
+  inputEmail.id = 'login-inputEmail';
+  inputPass.id = 'login-inputPass';
+  buttonReturn.id = 'btnLoginReturn';
+  buttonLogin.id = 'btnLogin';
+
   inputEmail.placeholder = 'Escribe tu email';
   inputPass.placeholder = 'Contraseña';
 

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home snapshot of home 1`] = `
+<div>
+  <section>
+    <h2>
+      BIENVENIDO A LA WANDERWEB
+    </h2>
+    <button
+      id="btnLogin"
+    >
+      Iniciar sesión
+    </button>
+    <button
+      id="btnSignUp"
+    >
+      Crear cuenta nueva
+    </button>
+    <button
+      id="btnGoogleLogin"
+    >
+      Iniciar sesión con Google
+    </button>
+  </section>
+</div>
+`;

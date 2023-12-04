@@ -7,6 +7,10 @@ function home(navigateTo) {
   const buttonSignUp = document.createElement('button');
   const buttonGoogleLogin = document.createElement('button');
 
+  buttonLogin.id = 'btnLogin';
+  buttonSignUp.id = 'btnSignUp';
+  buttonGoogleLogin.id = 'btnGoogleLogin'; // Asigna un ID único para el botón de inicio de sesión con Google
+
   title.textContent = 'BIENVENIDO A LA WANDERWEB';
 
   buttonLogin.textContent = 'Iniciar sesión';

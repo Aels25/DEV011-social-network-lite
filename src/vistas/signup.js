@@ -26,6 +26,10 @@ function signup(navigateTo) {
 
   // Agrega un id al formulario
   form.id = 'signup-form';
+  buttonReturn.id = 'btnReturn'; // Asigna un ID único para el botón de retorno
+  buttonSignup.id = 'btnSignup';
+  inputEmail.id = 'inputEmail';
+  inputPass.id = 'inputPass';
 
   // Evento para el formulario de registro
   form.addEventListener('submit', async (event) => {

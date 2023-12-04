@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`signup snapshot of signup 1`] = `
+<div>
+  <section>
+    <h2>
+      Regístrate y Comienza tu Aventura
+    </h2>
+    <form
+      id="signup-form"
+    >
+      <input
+        placeholder="Escribe tu nombre"
+      />
+      <input
+        id="inputEmail"
+        placeholder="Escribe tu email"
+      />
+      <input
+        id="inputPass"
+        placeholder="Crea una contraseña"
+      />
+      <button
+        id="btnSignup"
+      >
+        Registrarse
+      </button>
+    </form>
+    <button
+      id="btnReturn"
+    >
+      Volver a la página de inicio
+    </button>
+    <div />
+  </section>
+</div>
+`;
