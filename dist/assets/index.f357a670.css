@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+  background: linear-gradient(to right, #006666, #008080);
+}
+
+
+section {
+  background: linear-gradient(to right, #c0e8e8, #d4f2f2);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+h2 {
+  text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+  color: #ffd700; /* Amarillo brillante */
+  font-size: 28px; /* Tamaño del texto */
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Sombra con un poco de transparencia */
+}
+
+
+
+
+
+
+
+button {
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #589d9d;
+  transform: scale(1.05);
+
+}
+
+
+#post-list li {
+  justify-content: space-between;
+}
+
+#post-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Estilos para los botones en los posts */
+.post-item button {
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  padding: 5px 8px; /* Menor espacio interno (padding) */
+  margin-right: 5px; /* Espacio entre los botones */
+}
+
+
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  section {
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  .post-item {
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #post-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #post-list button {
+    margin-top: 10px;
+  }
+}
+
+/* Estilos para computadoras */
+@media only screen and (min-width: 601px) {
+  section {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+
+  button {
+    margin-right: 5px;
+    display: inline-block;
+  }
+
+  form {
+    max-width: 400px;
+  }
+
+  .post-item {
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .post-item button {
+    width: 30%; /* Ancho del 30% para que estén en una sola fila */
+    margin-right: 0; /* Elimina el margen derecho para que estén pegados */
+  }
+}
+
+/* Estilos para computadoras */
+@media only screen and (min-width: 601px) {
+  .post-item button {
+    width: auto; /* Ancho automático para que ocupen el espacio necesario */
+  }
+}
